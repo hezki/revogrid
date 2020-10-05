@@ -59,7 +59,7 @@ export default class ColumnService implements ColumnServiceI {
     const extraPropsFunc = this.columns[c]?.cellProperties;
     if (extraPropsFunc) {
       const data = this.rowDataModel(r, c);
-      const extra = extraPropsFunc(data);
+      const extra = extraPropsFunc(data, props);
       if (!extra) {
         return props;
       }
